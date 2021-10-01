@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 
 namespace PrimeNumbersAgain
@@ -25,7 +26,34 @@ namespace PrimeNumbersAgain
 
         static int FindNthPrime(int n)
         {
-            return 0;
+            bool prime = false;
+            int count = 0;
+            int j;
+            
+            for (int i = 2; i <= n; i++)
+            {
+                for (j = 2; j < i; j++)  
+                {  
+                    if (i % j == 0)  
+                    {  
+                        prime = true;  
+                        break;  
+                    }
+                }
+
+                if (!prime)
+                {
+                    Console.Write("{0} ", j);
+                    count++;
+                }
+                else
+                {
+                    prime = false;
+                }
+                
+            }
+            
+            return count;
         }
 
         static int GetNumber()
@@ -42,6 +70,7 @@ namespace PrimeNumbersAgain
                 }
 
                 Console.WriteLine($"{num} is not a valid number.  Please try again.\n");
+
             }
         }
 
