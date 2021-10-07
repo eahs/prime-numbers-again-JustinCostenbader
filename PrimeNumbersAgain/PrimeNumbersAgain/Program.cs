@@ -27,10 +27,10 @@ namespace PrimeNumbersAgain
         static int FindNthPrime(int n)
         {
             bool prime = false;
-            int count = 0;
-            int j;
+            int count = 1;
+            int j = 0;
             
-            for (int i = 2; i <= n; i++)
+            for (int i = 3; count < n; i+=2)
             {
                 for (j = 2; j < i; j++)  
                 {  
@@ -43,7 +43,6 @@ namespace PrimeNumbersAgain
 
                 if (!prime)
                 {
-                    Console.Write("{0} ", j);
                     count++;
                 }
                 else
@@ -53,7 +52,7 @@ namespace PrimeNumbersAgain
                 
             }
             
-            return count;
+            return j;
         }
 
         static int GetNumber()
