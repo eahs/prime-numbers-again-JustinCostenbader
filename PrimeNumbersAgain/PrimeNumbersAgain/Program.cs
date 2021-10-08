@@ -30,6 +30,7 @@ namespace PrimeNumbersAgain
             int count = 1;
             int j = 0;
             
+            // Somehow need to implement square roots to speed up the algorithm.
             for (int i = 3; count < n; i+=2)
             {
                 for (j = 2; j < i; j++)  
